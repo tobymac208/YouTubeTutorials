@@ -7,7 +7,7 @@ const luhnAlgorithm = (ccNumber) => {
     for(let i = 0; i < length; i++) {
         let currentDigit = parseInt(ccNumber[i]);
 
-        if ((i+2) % 2 == 0)
+        if ( (i+2) % 2 === 0)
             if((currentDigit *= 2) > 9)
                 currentDigit -= 9;
         
@@ -28,4 +28,5 @@ const checkCC = () => {
         message = "CC verification failed :(";
     
     elCCValidation.textContent = message;
+    elCCNumber.value = null;
 };
