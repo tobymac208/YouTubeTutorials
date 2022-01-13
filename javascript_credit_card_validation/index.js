@@ -1,3 +1,5 @@
+let attemptsCounter = 0;
+
 const luhnAlgorithm = (ccNumber) => {
     const length = ccNumber.length;
     let count = 0;
@@ -20,6 +22,7 @@ const luhnAlgorithm = (ccNumber) => {
 const checkCC = () => {
     const elCCNumber = document.getElementById('ccNumber');
     const elCCValidation = document.getElementById('ccValidator');
+    const elAttempts = document.getElementById('attempts');
     let message = "";
 
     if( luhnAlgorithm(elCCNumber.value) )
@@ -29,4 +32,6 @@ const checkCC = () => {
     
     elCCValidation.textContent = message;
     elCCNumber.value = null;
+
+    elAttempts.textContent = ++attemptsCounter;
 };
