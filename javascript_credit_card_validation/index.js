@@ -4,15 +4,13 @@ const luhnAlgorithm = (ccNumber) => {
     const length = ccNumber.length;
     let count = 0;
 
-    /** Traverse the whole credit card number. */
+    /** Traverse the whole credit card number.
+     *  Starts at the end of the number and begins counting from the second-to-last number. This fixes the case for odd-numbered length credit card numbers, like AMEX cards.
+    */
     for(let i = length - 1 ; i >= 0; i--)
     {
         let currentDigit = parseInt(ccNumber[i]);
-
-        // if ( (i+2) % 2 === 0)
-        //     if((currentDigit *= 2) > 9)
-        //         currentDigit -= 9;
-        if ((i - 1) % 2 == 0) // I only want to double every other number, starting with the first number. I don't want to double the last number.
+        if ((i - 1) % 2 == 0) // I only want to double every other number, starting with the second-to-last number. I don't want to double the last number.
         {
             if ((currentDigit *= 2) > 9)
             {
