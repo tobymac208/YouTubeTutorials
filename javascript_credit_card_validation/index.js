@@ -5,7 +5,7 @@ const luhnAlgorithm = (ccNumber) => {
     let count = 0;
 
     /** Traverse the whole credit card number.
-     *  Starts at the end of the number and begins counting from the second-to-last number. This fixes the case for odd-numbered length credit card numbers, like AMEX cards.
+     *  Starts at the end of the number and begins doubling from the second-to-last number. This fixes the case for odd-numbered length credit card numbers, like AMEX cards.
     */
     for(let i = length - 1 ; i >= 0; i--)
     {
