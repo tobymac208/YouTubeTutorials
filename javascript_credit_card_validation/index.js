@@ -10,7 +10,7 @@ const luhnAlgorithm = (ccNumber) => {
     for(let i = length - 1 ; i >= 0; i--)
     {
         let currentDigit = parseInt(ccNumber[i]);
-        if ((i - 1) % 2 == 0) // I only want to double every other number, starting with the second-to-last number. I don't want to double the last number.
+        if ((i - 1) % 2 == 0) // I only want to double every other number, starts doubling with the second-to-last number. I don't want to double the last number.
         {
             if ((currentDigit *= 2) > 9)
             {
